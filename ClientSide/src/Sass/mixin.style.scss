@@ -1,0 +1,51 @@
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flexAlign($align,$justify){
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin boxShadow(){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+@mixin cursor($cursor) {
+    cursor: $cursor;    
+ }
+
+@mixin outline($outline) {
+    outline: $outline;    
+}
+
+@mixin borderRadius($topleft,$topright,$bottomleft,$bottomright){
+     border-bottom-left-radius: $bottomleft;
+     border-top-left-radius: $topleft;
+     border-top-right-radius: $topright;
+     border-bottom-right-radius: $bottomright;
+}
+
+@mixin placeholder($size,$color,$paddingLeft) {
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color: $color;
+        font-size: $size;
+        padding-left: $paddingLeft;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $color;
+        font-size: $size;
+        padding-left: $paddingLeft;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $color;
+        font-size: $size;
+        padding-left: $paddingLeft;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $color;
+        font-size: $size;
+        padding-left: $paddingLeft;
+    }
+  }

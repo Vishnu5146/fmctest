@@ -1,0 +1,13 @@
+version: 0.1
+
+
+phases:
+  install:
+    commands:
+    #install dependencies of node.js
+    - npm install
+
+
+    # upgrade AWS CLI to the LATEST VERSION
+    - pip install --upgrade awscli
+     

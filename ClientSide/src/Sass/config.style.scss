@@ -1,0 +1,444 @@
+@import '../Sass/color.style.scss';
+@import '../Sass/font.style.scss';
+@import '../Sass/mixin.style.scss';
+
+//MEDIA QUERIES
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+$phone: "(min-width: 320px) and (max-width: 768px)";
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+a, h1, h2, h3, h4, h5, h6, p {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+.hidden{
+    visibility: hidden;
+    display: none;
+    overflow: hidden;
+}
+
+
+
+//CONSTANTS
+
+.m-b-10{
+    margin-bottom: 10px;
+}
+
+.m-b-20{
+    margin-bottom: 20px;
+}
+
+.p-a-10{
+    padding: 10px;
+}
+
+.p-a-20{
+    padding: 20px;
+}
+
+.p-t-10{
+    padding-top:10px;
+}
+
+.p-t-20{
+    padding-top:20px;
+}
+
+// font-family: 'Josefin Sans', sans-serif;
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.row{
+    position: relative;
+    width: 100%;
+    height: auto;
+    @include flex(row);
+    @include flexAlign(center,flex-start);
+}
+
+.column{
+    position: relative;
+    width: 40%;
+    height: auto;
+    @include flex(column);
+    @include flexAlign(center,center);
+    @media #{$phone} {
+        width: 90%;
+    }
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    @include flex(column);
+    @include flexAlign(center,center);
+}
+
+.card{
+    position: relative;
+    width: 10%;
+    height: 120px;
+    background: $whiteColor;
+    margin: 0 2% 3% 0;
+    @include flex(column);
+    @include flexAlign(center,center);
+    @include borderRadius(5px,5px,5px,5px);
+    @include boxShadow();
+    @include cursor(pointer);
+
+    &:hover {
+        border: 1px solid $themeGreen;
+    }
+
+
+
+    @media (max-width: 560px) {
+        width: 40%;
+        @include flexAlign(center,center);
+    }
+}
+
+.layout{
+    position: relative;
+    width: auto;
+    max-width: 1220px;
+    height: auto;
+    margin: 0px auto;
+    @media #{$phone} {
+        margin: 20px 0 20px 20px;
+    }
+}
+
+//NIB FOR HIGHLIGHTING THE DETAILS
+
+.nib{
+    position: relative;
+    width: 20%;
+    height: 25px;
+    background: #ffffff;
+    @include flex(row);
+    @include flexAlign(center,center);
+    @include cursor(pointer);
+    @include borderRadius(25px,25px,25px,25px);
+    @media #{$phone} {
+        width: 30%;
+    }
+}
+
+.circle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: $themeGreen;
+    color: #ffffff;
+    margin: 0 10px 0 0;
+    @include borderRadius(25px,25px,25px,25px);
+    @include flex(row);
+    @include flexAlign(center,center);
+    @include cursor(pointer);
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: seagreen;
+}
+
+// STYLE THAT GOES HERE - HOMEPAGE
+
+.App{
+    @include flex(column);
+    @include flexAlign(center,center);
+    font-family: 'Poppins', sans-serif;
+}
+
+.InputBox_Container{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: $whiteColor;
+    margin: 0 0 50px 0;
+    @include boxShadow();
+    border-radius: 10px;
+    @include flex(row);
+    @include flexAlign(center,center);
+    z-index: 5;
+
+
+    .SelectBox_Container{
+        position: relative;
+        padding: 0;
+        width: 25%;
+        height: 100%;
+        border-right: 1px solid $placeholderColor;
+        @include flex(row);
+        @include flexAlign(center,center);
+        @media #{$phone} {
+            width: 40%;
+        }
+        // .SelectBox{
+        //     position: relative;
+        //     width: 70%;
+        //     height: 100%;
+        //     border: none;
+        //     padding: 0 0 0 15px;
+        //     @include outline(none);
+        //     @include cursor(pointer);
+        //     @include borderRadius(25px,0,25px,0);
+        // }
+
+        .Selector_container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        
+            .selector{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                @include flex(row);
+                @include flexAlign(center,center);
+                @include cursor(pointer);
+            }
+
+            .dropdown{
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    background: #ffffff;
+                    margin: 10px 0 0 0;
+                    @include borderRadius(5px,5px,5px,5px);
+
+                .list{
+                    padding: 5px;
+                    font-size: 14px;
+                    border-bottom: 1px solid #eeeeee;
+                    @include cursor(pointer);
+                    
+                    &:hover {
+                        color: #ffffff;
+                        background: $SecondaryColorAccent;
+                    }
+
+                }
+
+            }
+           
+        }
+
+        i{
+            position: absolute;
+            right: 10px;
+        }
+
+    }
+
+    .InputBox{
+        padding: 0px;
+        position: relative;
+        width: 60%;
+        height: 100%;
+        border: none;
+        @include outline(none);
+        padding-left: 20px;
+        font-size: 14px;
+        @include placeholder(15px,$placeholderColor,0px);
+        @media #{$phone} {
+            width: 40%;
+        }
+    }
+
+    .SearchButton{
+        position: relative;
+        width: 15%;
+        height: 100%;
+        background: $SecondaryColor;
+        border: none;
+        @include outline(none);
+        @include cursor(pointer);
+        @include borderRadius(0,5px,0,5px);
+
+        &:hover {
+            color: #ffffff;
+            background: $SecondaryColorAccent;
+        }
+
+    }
+}
+
+.CardContainer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px 0;
+    @include flex(row);
+    @include flexAlign(center,space-between);
+    flex-wrap: wrap;
+
+    a{
+        position: relative;
+        width: 22%;
+        height: 100%;
+        @media #{$phone} {
+            width: 48%;
+        }
+
+        .Card{
+            position: relative;
+            width: 100%;
+            height: 120px;
+            background: $whiteColor;
+            margin: 0 2% 3% 0;
+            @include flex(column);
+            @include flexAlign(center,center);
+            @include borderRadius(5px,5px,5px,5px);
+            @include boxShadow();
+    
+            .SportName{
+                margin:0 0 5px 0;
+            }
+    
+            .SportPic{
+                position: relative;
+                width: 50%;
+                height: 60%;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+    
+    
+        }
+    }
+    
+
+}
+
+
+///// STYLE THAT GOES HERE - HEADER
+
+.Header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+
+    .HeaderRow{
+         position: relative;
+         width: 100%;
+         height: 100%;
+         @include flex(row);
+         @include flexAlign(center,flex-start);
+
+        .Bobble{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: #ffffff;
+            margin: 0 0 0 50px;
+            @include cursor(pointer);
+            @include borderRadius(100%,100%,100%,100%);
+            @include flex(row);
+            @include flexAlign(center,center);
+            @include boxShadow();
+            @media #{$phone} {
+                margin: 0 0 0 20px;
+            }
+
+            i{
+                font-size: 20px;
+            }
+
+        }
+
+    }
+}
+
+.Nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 1;
+    transition: 0.7s height ease-in-out;
+
+    .NavRow{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        background-color: $SecondaryColorAccent;
+        @include flex(row);
+        @include flexAlign(center,center);
+
+        .NavLinks{
+            position: relative;
+            width: auto;
+            height: auto;
+            @include flex(column);
+            @include flexAlign(center,center);
+            flex-wrap: wrap;
+            transition: 0.7s opacity ease-in-out;
+ 
+            p{
+                position: relative;
+                font-size: 20px;
+                color: $whiteColor;
+                margin: 20px 0 50px 0;
+                display: block;
+                opacity: 1;
+                text-decoration: none;
+                transition: 0.5s font-size ease-in;
+                
+
+                &:hover{
+                    font-size: 34px;
+                }
+            }
+      
+
+        }
+
+    }
+
+}
+
+
+//// 2 - SERVICES PAGE -- FOR SHOWCASING THE SERVICES
+
+.servicesCard{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    @include flex(row);
+    @include flexAlign(center,flex-start);
+}
